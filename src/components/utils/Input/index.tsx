@@ -1,5 +1,5 @@
 import React from "react";
-import styles from './page.module.css'
+import styles from "./page.module.css";
 
 interface InputProps {
   type: string;
@@ -8,7 +8,7 @@ interface InputProps {
   name: string;
   rest: any;
   className?: string;
-  autoComplete?:string
+  autoComplete?: string;
 }
 
 const Input = ({
@@ -18,7 +18,7 @@ const Input = ({
   rest,
   name,
   className,
-  autoComplete
+  autoComplete,
 }: InputProps) => {
   return (
     <>
@@ -28,7 +28,7 @@ const Input = ({
         placeholder={placeholder}
         name={name}
         {...rest}
-        className={styles[className ?? "defaultBtn"]}
+        className={className ?? styles.formInput}
         autoComplete={autoComplete}
       />
     </>

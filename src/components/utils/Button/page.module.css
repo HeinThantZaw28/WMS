@@ -1,4 +1,4 @@
-.Tertiary {
+/* .Tertiary {
   @apply px-4 py-2 rounded-md bg-black text-white;
 }
 
@@ -8,7 +8,7 @@
 
 .secondaryBtn {
   @apply px-4 py-2 rounded-md bg-green-300 text-white;
-}
+} */
 
 .defaultBtn {
   @apply bg-violet-500 text-white;

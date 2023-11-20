@@ -6,7 +6,7 @@ import { LabelProps } from "./type";
 const Label = ({ htmlFor, className, children }: LabelProps) => {
   return (
     <>
-      <label htmlFor={htmlFor} className={styles[className ?? "defaultLabel"]}>
+      <label htmlFor={htmlFor} className={className ?? styles.defaultLabel}>
         {children}
       </label>
     </>

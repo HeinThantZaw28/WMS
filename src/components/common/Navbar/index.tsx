@@ -16,12 +16,11 @@ const Navbar = ({ children }: { children: React.ReactNode }) => {
     setOpen(!open);
   };
 
-
   return (
     <>
-      <div className="w-full flex">
+      <div className="w-full flex h-screen">
         <div
-          className={`bg-slate-300 h-screen z-10 px-4 fixed shadow-xl ${
+          className={`bg-primary h-screen z-20 px-4 fixed shadow-xl ${
             open ? "w-[20rem]" : "w-16"
           } duration-500`}
         >
@@ -47,7 +46,7 @@ const Navbar = ({ children }: { children: React.ReactNode }) => {
               {menuItems.map((item, i) => (
                 <Link
                   href={item.url}
-                  className="flex items-center text-sm gap-3.5 font-medium p-2 hover:bg-slate-400 rounded-md group"
+                  className="flex items-center text-sm gap-3.5 font-medium p-2 hover:bg-tertirary rounded-md group"
                   key={i}
                 >
                   <div>{React.createElement(item.icon ?? Dashboard)}</div>
@@ -73,8 +72,8 @@ const Navbar = ({ children }: { children: React.ReactNode }) => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col w-full ml-[64px] relative">
-          <nav className="w-[97%] bg-slate-400 flex flex-col py-2 px-4 h-[70px] fixed z-10">
+        <div className="flex flex-col w-full ml-[64px] h-full">
+          <nav className="w-[97%] bg-tertirary flex flex-col py-2 px-4 h-[10%] fixed z-10">
             <div className="flex justify-between items-center h-[50%]">
               <div className={`font-bold text-2xl font-sans`}>
                 {!open ? "WMS" : ""}
@@ -88,7 +87,7 @@ const Navbar = ({ children }: { children: React.ReactNode }) => {
               <BreadCrumb />
             </div>
           </nav>
-          <main className="h-[200vh] bg-sky-200">{children}</main>
+          <main className="h-[90%] mt-[5rem]">{children}</main>
         </div>
       </div>
     </>
