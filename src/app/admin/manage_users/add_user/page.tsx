@@ -10,7 +10,6 @@ import { RegisterformProps } from "../../type";
 const UserCreate = () => {
   const searchParams = useSearchParams();
   const fromPage = searchParams.get("fromPage");
-  console.log(fromPage);
   const defaultValues = {
     userName: "",
     address: "",
@@ -37,7 +36,6 @@ const UserCreate = () => {
           onSubmit={handleSubmit(
             fromPage === "add_driver" ? driverOnSubmit : onSubmit
           )}
-          action=""
           className="flex flex-col w-[500px] gap-6 px-20 py-5 bg-primary rounded-lg h-[600px] overflow-y-auto"
         >
           <Label className={"text-3xl ms-10 font-sans font-bold text-black"}>
@@ -56,7 +54,7 @@ const UserCreate = () => {
             }}
             className={`px-5 py-3 ${
               errors.userName
-                ? "text-red-500 border border-red-500"
+                ? "placeholder-red-500 border border-red-500"
                 : "text-black"
             }  rounded-md font-sans text-lg`}
           />
@@ -70,7 +68,9 @@ const UserCreate = () => {
               }),
             }}
             className={`px-5 py-3 ${
-              errors.email ? "text-red-500 border border-red-500" : "text-black"
+              errors.email
+                ? " border border-red-500 placeholder-red-500"
+                : "text-black"
             }  rounded-md font-sans text-lg`}
           />
           <Input
@@ -89,7 +89,7 @@ const UserCreate = () => {
             }}
             className={`px-5 py-3 ${
               errors.password
-                ? "text-red-500 border border-red-500"
+                ? "placeholder-red-500 border border-red-500"
                 : "text-black"
             }  rounded-md font-sans text-lg`}
           />
@@ -109,14 +109,16 @@ const UserCreate = () => {
             }}
             className={`px-5 py-3 ${
               errors.contactInfo
-                ? "text-red-500 border border-red-500"
+                ? "placeholder-red-500 border border-red-500"
                 : "text-black"
             }  rounded-md font-sans text-lg`}
           />
 
           <TextArea
             className={`px-5 py-3 ${
-              errors.email ? "text-red-500 border border-red-500" : "text-black"
+              errors.email
+                ? "placeholder-red-500 border border-red-500"
+                : "text-black"
             }  rounded-md font-sans text-lg`}
             rows={4}
             cols={5}
@@ -131,12 +133,7 @@ const UserCreate = () => {
                 },
               }),
             }}
-          >
-            {"Address"}
-          </TextArea>
-          {/* {errors.address && (
-            <span className="error">{errors?.address?.message}</span>
-          )} */}
+          />
 
           <Button
             type={"submit"}

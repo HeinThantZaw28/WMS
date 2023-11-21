@@ -9,18 +9,22 @@ const Navbar = ({ children }: { children: React.ReactNode }) => {
   // const {filteredMenu}=useAuth();
   const [open, setOpen] = useState(false);
 
-  const userRole = "admin";
+  const userRole = "driver";
   const menuItems = getMenuByRole(userRole);
 
   const sideBarOpenHandler = () => {
     setOpen(!open);
   };
 
+  const handleLogout = () => {
+    console.log("logout");
+  };
+
   return (
     <>
       <div className="w-full flex h-screen">
         <div
-          className={`bg-primary h-screen z-20 px-4 fixed shadow-xl ${
+          className={`bg-primary h-full z-20 px-4 fixed shadow-xl ${
             open ? "w-[20rem]" : "w-16"
           } duration-500`}
         >
@@ -80,14 +84,20 @@ const Navbar = ({ children }: { children: React.ReactNode }) => {
               </div>
               {/* Dark Mode  */}
               <div className="flex justify-center items-center">
-                <Toggle />
+                {/* <Toggle /> */}
+                <Button
+                  type={"button"}
+                  title={"Logout"}
+                  onClick={handleLogout}
+                  className="px-4 rounded-md h-full bg-red-500 text-white hover:bg-red-300 mr-10"
+                />
               </div>
             </div>
-            <div className="border-t border-gray-600  h-[50%]">
+            <div className="border-t border-gray-600 h-[50%]">
               <BreadCrumb />
             </div>
           </nav>
-          <main className="h-[90%] mt-[5rem]">{children}</main>
+          <main className=" h-[90%] mt-[5rem] overflow-auto">{children}</main>
         </div>
       </div>
     </>

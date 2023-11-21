@@ -22,15 +22,34 @@ const ManageUser = () => {
         <div className="flex flex-wrap -m-2">
           {userLists?.map((info: DriverListProps) => (
             <div className="p-2 lg:w-1/3 md:w-1/2 w-full" key={info.id}>
-              <div className="h-full flex items-center bg-primary border p-4 rounded-lg hover:bg-tertirary">
-                <div className="w-16 h-16 bg-secondary object-cover object-center flex-shrink-0 rounded-full mr-4">
-                  {/* <Image fill alt="driver image" src={info.img} /> */}
-                </div>
-                <div className="flex-grow">
-                  <h2 className="text-gray-900 title-font font-medium">
-                    {info.name}
-                  </h2>
-                  <p className="text-gray-900">{info.regDate}</p>
+              <div className="h-[100px] flex items-center bg-primary border p-4 rounded-lg group">
+                <>
+                  <div className="w-16 h-16 bg-secondary object-cover object-center flex-shrink-0 rounded-full mr-4 group-hover:hidden">
+                    {/* <Image fill alt="driver image" src={info.img} /> */}
+                  </div>
+                  <div className="flex-grow group-hover:hidden">
+                    <h2 className="text-gray-900 title-font font-medium">
+                      {info.name}
+                    </h2>
+                    <p className="text-gray-900">{info.regDate}</p>
+                  </div>
+                </>
+                <div className="w-full h-full opacity-0 group-hover:opacity-100 ">
+                  <Button
+                    type={"button"}
+                    title={"Detail"}
+                    className="h-full w-[33.3%] bg-primary hover:bg-tertirary hover:text-white rounded-l-lg"
+                  />
+                  <Button
+                    type={"button"}
+                    title={"Edit"}
+                    className="h-full w-[33.3%] bg-primary hover:bg-green-300 hover:text-white"
+                  />
+                  <Button
+                    type={"button"}
+                    title={"Delete"}
+                    className="h-full w-[33.3%] bg-primary hover:bg-red-500 hover:text-white rounded-r-lg"
+                  />
                 </div>
               </div>
             </div>

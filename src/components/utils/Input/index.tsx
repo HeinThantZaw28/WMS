@@ -9,6 +9,7 @@ interface InputProps {
   rest: any;
   className?: string;
   autoComplete?: string;
+  style?: any;
 }
 
 const Input = ({
@@ -19,6 +20,7 @@ const Input = ({
   name,
   className,
   autoComplete,
+  style,
 }: InputProps) => {
   return (
     <>
@@ -30,6 +32,7 @@ const Input = ({
         {...rest}
         className={className ?? styles.formInput}
         autoComplete={autoComplete}
+        style={style}
       />
     </>
   );

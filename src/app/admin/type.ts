@@ -1,8 +1,9 @@
 export interface BlockProps {
   id: number;
   title: string;
-  icon: string;
+  icon: any;
   desc: string;
+  url?: string;
 }
 
 export interface UserListProps {

@@ -5,7 +5,7 @@ const layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       {/* <DriverRoleProvider> */}
-        <div>{children}</div>
+      <div className="px-4 py-2">{children}</div>
       {/* </DriverRoleProvider> */}
     </>
   );

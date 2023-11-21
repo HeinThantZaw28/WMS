@@ -3,6 +3,6 @@ export interface TextAreaProps {
   rows: number;
   cols: number;
   placeholder: string;
-  children: React.ReactNode;
+  children?: React.ReactNode;
   rest: any;
 }
