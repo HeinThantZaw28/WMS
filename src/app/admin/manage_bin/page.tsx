@@ -32,12 +32,6 @@ const ManageBin = () => {
   const { errors } = formState;
   const onSubmit: SubmitHandler<ComplainProps> = (data) => {
     console.log("myComplaindata>>>", data);
-
-    // setFilterStatus(
-    //   data.selectOptions
-    //     ? mockData.filter((item) => item.Status === data.selectOptions.value)
-    //     : undefined
-    // );
     setFilterStatus(
       data.selectOptions && data.binNumber
         ? mockData.filter(

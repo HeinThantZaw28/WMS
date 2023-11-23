@@ -52,23 +52,21 @@ const DriverDashboard = () => {
         <div className="flex flex-wrap -m-4">
           {/*block */}
           {driverDashboard?.map((item) => (
-            <>
-              <div
-                className="xl:w-1/3 md:w-1/2 p-4"
-                key={item.id}
-                onClick={() => directionHandler(item.url as string)}
-              >
-                <div className="border border-gray-200 p-6 rounded-lg bg-primary hover:bg-tertirary">
-                  <div className="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
-                    {item.icon && <item.icon />}
-                  </div>
-                  <h2 className="text-lg text-gray-900 font-bold title-font mb-2">
-                    {item.title}
-                  </h2>
-                  <p className="leading-relaxed text-base">{item.desc}</p>
+            <div
+              className="xl:w-1/3 md:w-1/2 p-4"
+              key={item.id}
+              onClick={() => directionHandler(item.url as string)}
+            >
+              <div className="border border-gray-200 p-6 rounded-lg bg-primary hover:bg-tertirary">
+                <div className="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
+                  {item.icon && <item.icon />}
                 </div>
+                <h2 className="text-lg text-gray-900 font-bold title-font mb-2">
+                  {item.title}
+                </h2>
+                <p className="leading-relaxed text-base">{item.desc}</p>
               </div>
-            </>
+            </div>
           ))}
           {/*end */}
         </div>
