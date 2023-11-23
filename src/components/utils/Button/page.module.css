@@ -1,0 +1,15 @@
+/* .Tertiary {
+  @apply px-4 py-2 rounded-md bg-black text-white;
+}
+
+.primary {
+  @apply bg-slate-400;
+}
+
+.secondaryBtn {
+  @apply px-4 py-2 rounded-md bg-green-300 text-white;
+} */
+
+.defaultBtn {
+  @apply bg-violet-500 text-white;
+}

@@ -1,0 +1,2 @@
+Admin Panel --> Dashboard/Total Bins ---> Search Form for filtering bins && bin lists with action button(delete and assign)
+                                            //need to change table in total bins(columns and rows)

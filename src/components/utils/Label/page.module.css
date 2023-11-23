@@ -1,0 +1,6 @@
+.defaultLabel {
+  @apply text-xl text-black font-mono text-center;
+}
+.formHeader {
+  @apply text-xl text-white font-mono text-center;
+}

@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 42px;
+  height: 24px;
+  border: 1px solid #817e7e;
+  border-radius: 30px;
+  padding-bottom: 2px;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  @apply border-gray-600 border-solid;
+}
+.container:active {
+  @apply bg-green-300 border-white;
+}
+
+.icon {
+  font-size: 14px;
+  position: relative;
+  top: 1px;
+}
+
+.ball {
+  width: 15px;
+  height: 15px;
+  background-color: aquamarine;
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+}
