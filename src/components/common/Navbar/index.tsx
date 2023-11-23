@@ -9,7 +9,7 @@ const Navbar = ({ children }: { children: React.ReactNode }) => {
   // const {filteredMenu}=useAuth();
   const [open, setOpen] = useState(false);
 
-  const userRole = "driver";
+  const userRole = "admin";
   const menuItems = getMenuByRole(userRole);
 
   const sideBarOpenHandler = () => {

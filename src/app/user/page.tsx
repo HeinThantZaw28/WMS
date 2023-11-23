@@ -2,7 +2,12 @@
 import React from "react";
 import { BlockProps } from "../admin/type";
 import { useRouter } from "next/navigation";
-import { AutoDelete, DeleteOutline, PersonPin } from "@mui/icons-material";
+import {
+  AutoDelete,
+  DeleteForever,
+  DeleteOutline,
+  PersonPin,
+} from "@mui/icons-material";
 
 const UserDashboard = () => {
   const router = useRouter();
@@ -16,11 +21,18 @@ const UserDashboard = () => {
     },
     {
       id: 2,
-      title: "Bin Process",
+      title: "Total Bins",
       icon: AutoDelete,
-      desc: "Check your bin is in assign or not",
-      url: "/driver/profile",
+      desc: "Your created bins",
+      url: "/user/complain",
     },
+    // {
+    //   id: 3,
+    //   title: "Complete Bins",
+    //   icon: DeleteForever,
+    //   desc: "You can check your completed bins",
+    //   url: "",
+    // },
     {
       id: 3,
       title: "Profile",

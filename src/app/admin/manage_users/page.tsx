@@ -41,18 +41,13 @@ const ManageUser = () => {
                   <Button
                     type={"button"}
                     title={"Detail"}
-                    className="h-full w-[33.3%] bg-primary hover:bg-tertirary hover:text-white rounded-l-lg"
+                    className="h-full w-[50%] bg-primary hover:bg-tertirary hover:text-white rounded-l-lg"
                     onClick={handleOpenModal}
                   />
                   <Button
                     type={"button"}
-                    title={"Edit"}
-                    className="h-full w-[33.3%] bg-primary hover:bg-green-300 hover:text-white"
-                  />
-                  <Button
-                    type={"button"}
                     title={"Delete"}
-                    className="h-full w-[33.3%] bg-primary hover:bg-red-500 hover:text-white rounded-r-lg"
+                    className="h-full w-[50%] bg-primary hover:bg-red-500 hover:text-white rounded-r-lg"
                   />
                 </div>
               </div>

@@ -3,14 +3,17 @@ import ReactSelect from "react-select";
 import styles from "./page.module.css";
 
 interface DropdownProps {
-  label: string;
-  options: any;
-  rest: any;
+  label?: string;
+  options?: any;
+  rest?: any;
   isMulti?: boolean;
   onChange?: (selectedOption: any) => any;
   autoFocus?: boolean;
   className?: string;
-  defaultValue: string;
+  defaultValue?: string | null;
+  id?: string;
+  onBlur?: () => void;
+  placeholder?: string;
 }
 
 export const DropDown = ({
@@ -18,13 +21,17 @@ export const DropDown = ({
   options,
   rest,
   isMulti,
-  onChange,
-  autoFocus,
   className,
   defaultValue,
+  onChange,
+  id,
+  onBlur,
+  placeholder,
 }: DropdownProps) => (
   <div className="flex gap-3 items-center">
-    <ReactSelect
+    {/* <ReactSelect
+      onBlur={onBlur}
+      id={id}
       className={`${className ?? styles["defaultStyle"]} `}
       {...rest}
       isMulti={isMulti || false}
@@ -37,9 +44,17 @@ export const DropDown = ({
           onChange(selectedOption);
         }
       }}
-      value={{ label: "Select Options"}}
+      value={{ label: "Select Options" }}
       autoFocus={autoFocus}
       instanceId={useId()}
+    /> */}
+    <ReactSelect
+      defaultValue={defaultValue}
+      onChange={onChange}
+      options={options}
+      className={className}
+      placeholder={placeholder}
+      isMulti={isMulti}
     />
   </div>
 );

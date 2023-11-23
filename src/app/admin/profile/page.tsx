@@ -3,7 +3,7 @@ import { Button, Label } from "@/components/utils";
 import Input from "@/components/utils/Input";
 import { ProfileProps } from "@/constants/type";
 import React from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
+import { useForm, SubmitHandler } from "react-hook-form";
 
 const Profile = () => {
   const defaultValues: ProfileProps = {
@@ -19,13 +19,13 @@ const Profile = () => {
   });
   const { errors } = formState;
   const onSubmit: SubmitHandler<ProfileProps> = (data) => {
-    console.log("user profile>>>", data);
+    console.log(data);
   };
   return (
     <>
       <div className="flex flex-col w-full bg-white shadow-xl rounded-lg px-4 py-2 gap-5">
         <Label className="text-2xl font-bold font-sans text-secondary">
-          User Profile
+          Admin Profile
         </Label>
         <form className="flex flex-col gap-4" onSubmit={handleSubmit(onSubmit)}>
           <Input

@@ -42,7 +42,7 @@ const ManageUser = () => {
                   />
                   <Button
                     type={"button"}
-                    title={"Edit"}
+                    title={"Assign"}
                     className="h-full w-[33.3%] bg-primary hover:bg-green-300 hover:text-white"
                   />
                   <Button

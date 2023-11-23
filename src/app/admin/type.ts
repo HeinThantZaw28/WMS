@@ -21,9 +21,10 @@ export interface DriverListProps {
 }
 
 export interface RegisterformProps {
+  fullName?: string;
   userName: string;
   address: string;
   contactInfo: string;
   email: string;
-  password: string;
+  password?: string;
 }

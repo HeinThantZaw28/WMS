@@ -11,6 +11,7 @@ const UserCreate = () => {
   const searchParams = useSearchParams();
   const fromPage = searchParams.get("fromPage");
   const defaultValues = {
+    fullName: "",
     userName: "",
     address: "",
     contactInfo: "",
@@ -31,16 +32,33 @@ const UserCreate = () => {
 
   return (
     <>
-      <div className="flex items-center h-[80vh] justify-center">
+      <div className="flex items-center justify-center">
         <form
           onSubmit={handleSubmit(
             fromPage === "add_driver" ? driverOnSubmit : onSubmit
           )}
-          className="flex flex-col w-[500px] gap-6 px-20 py-5 bg-primary rounded-lg h-[600px] overflow-y-auto"
+          className="flex flex-col w-[500px] gap-6 px-20 py-5 bg-primary rounded-lg overflow-y-auto"
         >
           <Label className={"text-3xl ms-10 font-sans font-bold text-black"}>
             {fromPage === "add_driver" ? "Driver" : "User"} Registration
           </Label>
+          <Input
+            name="fullName"
+            type={"text"}
+            placeholder={`${
+              errors.fullName ? errors.fullName.message : "Enter your full name"
+            }`}
+            rest={{
+              ...register("fullName", {
+                required: { message: "full name is required", value: true },
+              }),
+            }}
+            className={`px-5 py-3 ${
+              errors.fullName
+                ? "placeholder-red-500 border border-red-500"
+                : "text-black"
+            }  rounded-md font-sans text-lg`}
+          />
           <Input
             name="userName"
             type={"text"}
@@ -49,7 +67,7 @@ const UserCreate = () => {
             }`}
             rest={{
               ...register("userName", {
-                required: { message: "Input is required", value: true },
+                required: { message: "Username is required", value: true },
               }),
             }}
             className={`px-5 py-3 ${
