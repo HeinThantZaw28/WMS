@@ -1,9 +1,8 @@
-import React from 'react'
+"use client";
+import React from "react";
 
 const ManageAssign = () => {
-  return (
-    <div>Manage Assign</div>
-  )
-}
+  return <></>;
+};
 
-export default ManageAssign
+export default ManageAssign;

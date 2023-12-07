@@ -30,7 +30,7 @@ const Navbar = ({ children }: { children: React.ReactNode }) => {
         >
           <div className="flex justify-between items-center py-3">
             {open ? (
-              <div className="font-bold text-2xl font-sans">WMS</div>
+              <div className="font-bold text-2xl font-sans">GMS</div>
             ) : (
               ""
             )}
@@ -80,7 +80,7 @@ const Navbar = ({ children }: { children: React.ReactNode }) => {
           <nav className="w-[97%] bg-tertirary flex flex-col py-2 px-4 h-[10%] fixed z-10">
             <div className="flex justify-between items-center h-[50%]">
               <div className={`font-bold text-2xl font-sans`}>
-                {!open ? "WMS" : ""}
+                {!open ? "GMS" : ""}
               </div>
               {/* Dark Mode  */}
               <div className="flex justify-center items-center">

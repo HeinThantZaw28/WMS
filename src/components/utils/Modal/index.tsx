@@ -12,16 +12,16 @@ const Modal = ({ isVisible, onClose, children }: ModalProps) => {
     <div
       className="fixed flex inset-0 bg-black bg-opacity-10 justify-center h-screen items-center backdrop-blur-sm"
       id="wrapper"
-      onClick={handleClose}
+      onClick={(e) => handleClose(e)}
     >
       <div className="flex w-[500px] flex-col gap-3 bg-white px-4 py-2 rounded-md">
-        {children}
         <Button
           type={undefined}
-          title={"Close"}
+          title={"X"}
           onClick={() => onClose()}
-          className="px-4 py-2 rounded-md text-primary bg-tertirary hover:bg-indigo-300 hover:text-slate-500"
+          className="self-end ps-2 pr-5 py-2 rounded-md text-black border border-black hover:bg-red-500 hover:text-slate-500 w-4 text-left"
         />
+        {children}
       </div>
     </div>
   );

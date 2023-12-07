@@ -28,3 +28,10 @@ export interface RegisterformProps {
   email: string;
   password?: string;
 }
+
+export interface AssignModalProps {
+  selectOptions: any;
+  assignTo?: any;
+  assignDate?: Date;
+  status?: any;
+}
