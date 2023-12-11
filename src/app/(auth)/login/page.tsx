@@ -12,10 +12,7 @@ import { roleSelection } from "@/constants";
 const Login = () => {
   const [selectedOption, setSelectedOption] = useState(null);
   const validationSchema = yup.object({
-    email: yup
-      .string()
-      .email("Email format is invalid")
-      .required("Email is required"),
+    userName: yup.string().required("Email is required"),
     password: yup.string().required("Password is required"),
     selectOptions: yup
       .object({
@@ -26,7 +23,7 @@ const Login = () => {
   });
 
   const defaultValues: LoginFormProps = {
-    email: "",
+    userName: "",
     password: "",
     selectOptions: { label: "", value: "" },
   };
@@ -56,16 +53,16 @@ const Login = () => {
             {"Login Form"}
           </Label>
           <Input
-            name="email"
+            name="userName"
             type={"text"}
             placeholder={`${
-              errors.email ? errors.email.message : "Enter your Email"
+              errors.userName ? errors.userName.message : "Enter your Username"
             }`}
             rest={{
-              ...register("email"),
+              ...register("userName"),
             }}
             className={`px-5 py-3 ${
-              errors.email
+              errors.userName
                 ? "placeholder-red-500 border border-red-500"
                 : "text-black"
             }  rounded-md font-sans text-lg w-full`}

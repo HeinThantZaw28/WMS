@@ -1,6 +1,6 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import { BreadCrumb, Button, Toggle } from "@/components/utils";
+import React, { useState } from "react";
+import { BreadCrumb, Button } from "@/components/utils";
 import { Dashboard, FormatIndentIncrease } from "@mui/icons-material";
 import Link from "next/link";
 import { getMenuByRole } from "@/constants";
@@ -9,7 +9,7 @@ const Navbar = ({ children }: { children: React.ReactNode }) => {
   // const {filteredMenu}=useAuth();
   const [open, setOpen] = useState(false);
 
-  const userRole = "admin";
+  const userRole = "driver";
   const menuItems = getMenuByRole(userRole);
 
   const sideBarOpenHandler = () => {
