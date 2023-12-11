@@ -1,21 +1,37 @@
 "use client";
 import { Button } from "@/components/utils";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { DriverListProps } from "../type";
+import UserDetail from "../manage_users/UserDetail";
+import DeletePopup from "../manage_users/DeletePopup";
 
 const ManageUser = () => {
+  const [openModal, setOpenModal] = useState<boolean>(false);
+  const [modalData, setModalData] = useState({
+    isVisible: false,
+    onSubmit: (data: any) => {
+      // Handle form submission here
+      console.log("Modal form data>>>", data);
+      // Close the modal
+      setModalData({ ...modalData, isVisible: false });
+    },
+  });
   const userLists: DriverListProps[] = [
     { id: "1", name: "Hein", regDate: "12.10.2023", img: "" },
     { id: "2", name: "Thant", regDate: "12.10.2023", img: "" },
     { id: "3", name: "Zaw", regDate: "12.10.2023", img: "" },
     { id: "4", name: "Andres", regDate: "12.10.2023", img: "" },
   ];
+
+  const handleDetail = () => {
+    setOpenModal(true);
+  };
+  const handleDeleteModal = () => {
+    setModalData({ ...modalData, isVisible: true });
+  };
   return (
     <>
-      {/* <p>UserCreate Links</p>
-      <p>User list</p> */}
-
       <div className="flex flex-col justify-start mt-2 ms-5 gap-5">
         <h1 className="text-black text-4xl">Driver Management</h1>
         {/*Content */}
@@ -39,6 +55,7 @@ const ManageUser = () => {
                     type={"button"}
                     title={"Detail"}
                     className="h-full w-[33.3%] bg-primary hover:bg-tertirary hover:text-white rounded-l-lg"
+                    onClick={handleDetail}
                   />
                   <Button
                     type={"button"}
@@ -49,6 +66,7 @@ const ManageUser = () => {
                     type={"button"}
                     title={"Delete"}
                     className="h-full w-[33.3%] bg-primary hover:bg-red-500 hover:text-white rounded-r-lg"
+                    onClick={handleDeleteModal}
                   />
                 </div>
               </div>
@@ -62,6 +80,12 @@ const ManageUser = () => {
           url="/admin/manage_users/add_user?fromPage=add_driver"
         />
       </div>
+      <UserDetail isVisible={openModal} onClose={() => setOpenModal(false)} />
+      <DeletePopup
+        isVisible={modalData.isVisible}
+        onClose={() => setModalData({ ...modalData, isVisible: false })}
+        onSubmit={modalData.onSubmit}
+      />
     </>
   );
 };

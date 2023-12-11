@@ -3,9 +3,20 @@ import { Button } from "@/components/utils";
 import Image from "next/image";
 import React, { useState } from "react";
 import { UserListProps } from "../type";
+import UserDetail from "./UserDetail";
+import DeletePopup from "./DeletePopup";
 
 const ManageUser = () => {
   const [openModal, setOpenModal] = useState<boolean>(false);
+  const [modalData, setModalData] = useState({
+    isVisible: false,
+    onSubmit: (data: any) => {
+      // Handle form submission here
+      console.log("Modal form data>>>", data);
+      // Close the modal
+      setModalData({ ...modalData, isVisible: false });
+    },
+  });
   const userLists: UserListProps[] = [
     { id: "1", name: "Hein", regDate: "12.10.2023", img: "" },
     { id: "2", name: "Thant", regDate: "12.10.2023", img: "" },
@@ -15,6 +26,10 @@ const ManageUser = () => {
 
   const handleOpenModal = () => {
     setOpenModal(true);
+  };
+
+  const handleDeleteModal = () => {
+    setModalData({ ...modalData, isVisible: true });
   };
 
   return (
@@ -48,6 +63,7 @@ const ManageUser = () => {
                     type={"button"}
                     title={"Delete"}
                     className="h-full w-[50%] bg-primary hover:bg-red-500 hover:text-white rounded-r-lg"
+                    onClick={handleDeleteModal}
                   />
                 </div>
               </div>
@@ -61,6 +77,12 @@ const ManageUser = () => {
           url="/admin/manage_users/add_user"
         />
       </div>
+      <UserDetail isVisible={openModal} onClose={() => setOpenModal(false)} />
+      <DeletePopup
+        isVisible={modalData.isVisible}
+        onClose={() => setModalData({ ...modalData, isVisible: false })}
+        onSubmit={modalData.onSubmit}
+      />
     </>
   );
 };
