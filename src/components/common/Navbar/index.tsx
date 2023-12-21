@@ -4,12 +4,14 @@ import { BreadCrumb, Button } from "@/components/utils";
 import { Dashboard, FormatIndentIncrease } from "@mui/icons-material";
 import Link from "next/link";
 import { getMenuByRole } from "@/constants";
+import { useRouter } from "next/navigation";
 
 const Navbar = ({ children }: { children: React.ReactNode }) => {
   // const {filteredMenu}=useAuth();
   const [open, setOpen] = useState(false);
+  const router = useRouter();
 
-  const userRole = "admin";
+  let userRole = "user";
   const menuItems = getMenuByRole(userRole);
 
   const sideBarOpenHandler = () => {
@@ -18,6 +20,9 @@ const Navbar = ({ children }: { children: React.ReactNode }) => {
 
   const handleLogout = () => {
     console.log("logout");
+    if (userRole === "") {
+      router.push("/login");
+    }
   };
 
   return (

@@ -67,7 +67,6 @@ const Login = () => {
                 : "text-black"
             }  rounded-md font-sans text-lg w-full`}
           />
-
           <Input
             name="password"
             type={"text"}
@@ -83,7 +82,6 @@ const Login = () => {
                 : "text-black"
             }  rounded-md font-sans text-lg w-full`}
           />
-
           <Controller
             control={control}
             name="selectOptions"
@@ -104,12 +102,17 @@ const Login = () => {
           <p className="self-end mr-5 text-red-600">
             {errors?.selectOptions?.message}
           </p>
-
           <Button
             type={"submit"}
             title={"Submit"}
             className="px-4 py-3 rounded-md bg-tertirary w-full"
           />
+          <Link
+            href="/request_form"
+            className="border-b border-black font-serif hover:text-slate-400"
+          >
+            If you are new, request for a account
+          </Link>
         </form>
       </div>
     </>

@@ -47,7 +47,7 @@ const UserDashboard = () => {
   return (
     <>
       <div className="flex flex-col justify-start mt-2 ms-5 gap-5">
-        <h1 className="text-black text-4xl">Driver Dashboard</h1>
+        <h1 className="text-black text-4xl">User Dashboard</h1>
         <div className="flex flex-wrap -m-4">
           {/*block */}
           {userDashboard?.map((item) => (

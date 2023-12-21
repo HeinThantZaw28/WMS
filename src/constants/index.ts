@@ -7,10 +7,11 @@ import {
   ManageAccounts,
   ManageSearch,
   Report,
+  ContactMail,
   Settings,
 } from "@mui/icons-material";
 import { AssignApiInfo, AssignStatus, exampleTableData } from "./type";
-import { ASSIGNOPTIONS } from "@/app/user/type";
+import { ASSIGNOPTIONS } from "@/app/(root)/user/type";
 
 export const driverMenu = {
   title: "driver",
@@ -81,6 +82,11 @@ export const adminMenu = {
       label: "Search",
       url: "/admin/search",
       icon: ManageSearch,
+    },
+    {
+      label: "Request Account",
+      url: "/admin/request_account",
+      icon: ContactMail,
     },
     {
       label: "Setting",

@@ -6,7 +6,7 @@ import Table from "@/components/utils/Table";
 import { mockData } from "@/constants";
 import { exampleTableData } from "@/constants/type";
 import { createColumnHelper } from "@tanstack/react-table";
-import { ASSIGNOPTIONS, ComplainProps } from "@/app/user/type";
+import { ASSIGNOPTIONS, ComplainProps } from "@/app/(root)/user/type";
 import Input from "@/components/utils/Input";
 import OpenModal from "./AssignModal";
 

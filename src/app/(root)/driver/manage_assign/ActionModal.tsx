@@ -6,7 +6,7 @@ import { Controller, useForm } from "react-hook-form";
 
 import { useState } from "react";
 import { AssignStatus } from "@/constants/type";
-import { AssignModalProps } from "@/app/admin/type";
+import { AssignModalProps } from "@/app/(root)/admin/type";
 
 const OpenModal = ({ isVisible, onClose, onSubmit }: any) => {
   const [selectedOption, setSelectedOption] = useState(null);
